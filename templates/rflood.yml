@@ -16,6 +16,7 @@
 # 3 - sudo systemctl start tun
 # Check if running with - sudo systemctl status tun
 # recreate the container with - sudo docker-compose up --force-recreate rflood
+
   rflood:
     container_name: rflood
     image: cr.hotio.dev/hotio/rflood
@@ -52,5 +53,5 @@
       - FLOOD_AUTH=true # Set to false to disable authorization to the Flood UI
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${DOCKERCONFDIR}/rtorrent:/config:rw
+      - ${DOCKERCONFDIR}/rflood:/config:rw
       - ${DOCKERSTORAGEDIR}/torrents:/data/torrents:rw
